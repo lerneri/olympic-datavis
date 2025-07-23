@@ -1,0 +1,18 @@
+<div id="observablehq-viewof-chart-f14a8f5e"></div>
+<div id="observablehq-viewof-yearSelect-f14a8f5e"></div>
+<div id="observablehq-viewof-yearFilteredScatter-f14a8f5e"></div>
+<div id="observablehq-viewof-heatmaps-f14a8f5e"></div>
+<p>Credit: <a href="https://observablehq.com/d/28d23d1ad7224153">Podium inequalities by data-vis-ufc</a></p>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/d/28d23d1ad7224153.js?v=4";
+new Runtime().module(define, name => {
+  if (name === "viewof chart") return new Inspector(document.querySelector("#observablehq-viewof-chart-f14a8f5e"));
+  if (name === "viewof yearSelect") return new Inspector(document.querySelector("#observablehq-viewof-yearSelect-f14a8f5e"));
+  if (name === "viewof yearFilteredScatter") return new Inspector(document.querySelector("#observablehq-viewof-yearFilteredScatter-f14a8f5e"));
+  if (name === "viewof heatmaps") return new Inspector(document.querySelector("#observablehq-viewof-heatmaps-f14a8f5e"));
+  return ["filteredSocioeconomic"].includes(name);
+});
+</script>
