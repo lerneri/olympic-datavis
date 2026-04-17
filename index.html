@@ -1,18 +1,143 @@
-<div id="observablehq-viewof-chart-f14a8f5e"></div>
-<div id="observablehq-viewof-yearSelect-f14a8f5e"></div>
-<div id="observablehq-viewof-yearFilteredScatter-f14a8f5e"></div>
-<div id="observablehq-viewof-heatmaps-f14a8f5e"></div>
-<p>Credit: <a href="https://observablehq.com/d/28d23d1ad7224153">Podium inequalities by data-vis-ufc</a></p>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Inequality on the Podium</title>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #111827;
+    --accent: #38bdf8;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    color: var(--muted);
+  }
+
+  section {
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+  }
+
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+</head>
+
+<body>
+  <div class="container">
+<header>
+  <h1>Inequality on the Podium</h1>
+  <p>Exploring how socioeconomic factors influence Olympic performance</p>
+</header>
+
+<section>
+  <h2>Moves Between Countries</h2>
+  <div class="card">
+    <div id="observablehq-viewof-chart-f14a8f5e"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Olympic Performance vs Socioeconomic Data</h2>
+  <div class="card">
+    <div id="observablehq-viewof-yearSelect-f14a8f5e"></div>
+    <br>
+    <div id="observablehq-viewof-yearFilteredScatter-f14a8f5e"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Host Advantage Analysis</h2>
+  <div class="card">
+    <div id="observablehq-viewof-heatmaps-f14a8f5e"></div>
+  </div>
+</section>
+
+<footer>
+  <p>
+    Credit:
+    <a href="https://observablehq.com/d/28d23d1ad7224153" target="_blank">
+      Podium inequalities by data-vis-ufc
+    </a>
+  </p>
+</footer>
+
+  </div>
+
 <script type="module">
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
 import define from "https://api.observablehq.com/d/28d23d1ad7224153.js?v=4";
+
 new Runtime().module(define, name => {
   if (name === "viewof chart") return new Inspector(document.querySelector("#observablehq-viewof-chart-f14a8f5e"));
   if (name === "viewof yearSelect") return new Inspector(document.querySelector("#observablehq-viewof-yearSelect-f14a8f5e"));
   if (name === "viewof yearFilteredScatter") return new Inspector(document.querySelector("#observablehq-viewof-yearFilteredScatter-f14a8f5e"));
   if (name === "viewof heatmaps") return new Inspector(document.querySelector("#observablehq-viewof-heatmaps-f14a8f5e"));
-  return ["filteredSocioeconomic"].includes(name);
 });
 </script>
+
+</body>
+</html>
